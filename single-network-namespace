@@ -1,5 +1,6 @@
 #!/bin/bash
 
+. env.sh
 echo "Creating the namespace"
 sudo netns ip add $CON
 
