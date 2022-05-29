@@ -1,19 +1,19 @@
 # container-networks
 [Youtube](https://www.youtube.com/watch?v=6v_BDHIgOY8)
 
-- Single network namespace          => Veth pair connecting namespaces to the node
-- Single node, 2 namespaces         => Veth pairs + Linux bridge
-- Multiple nodes, same L2 network   => Routing rules on each node
-- Multiple nodes, overlay network   => Overlay network (think vxlan)
+- Single network namespace          &emsp; &emsp; &emsp; &emsp; => Veth pair connecting namespaces to the node
+- Single node, 2 namespaces         &emsp; &emsp; &emsp; &emsp; => Veth pairs + Linux bridge
+- Multiple nodes, same L2 network   &emsp; &emsp;  => Routing rules on each node
+- Multiple nodes, overlay network  &emsp; &emsp; &emsp;  => Overlay network (think vxlan)
 
 Concepts:
-- Routing rules                     => key to understand networks
-- Tun/Tap devices                   => key to understand overlay networks
+- Routing rules                 &emsp; &emsp; &emsp; => key to understand networks
+- Tun/Tap devices                &emsp; &emsp; => key to understand overlay networks
 
 Tools:
-- ip               => basis of computer networks
-- socat            => can connect anything to anything
-- tcpdump/tshark   => capture/debug networks
+- ip              &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; => basis of computer networks
+- socat         &emsp; &emsp; &emsp; &emsp;  &emsp; &emsp; &emsp; &emsp;  => can connect anything to anything
+- tcpdump/tshark  &emsp; &emsp; &emsp; &emsp; => capture/debug networks
 
 ```
 ##############################
