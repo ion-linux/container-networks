@@ -1,6 +1,9 @@
 # container-networks
 [Youtube 1](https://www.youtube.com/watch?v=0Omvgd7Hg1I)
+
 [Youtube 2](https://www.youtube.com/watch?v=6v_BDHIgOY8)
+
+[Youtube 3](https://www.youtube.com/watch?v=B6FsWNUnRo0)
 
 - Single network namespace          &emsp; &emsp; &emsp; &emsp; => Veth pair connecting namespaces to the node
 - Single node, 2 namespaces         &emsp; &emsp; &emsp; &emsp; => Veth pairs + Linux bridge
