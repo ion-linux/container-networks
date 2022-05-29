@@ -1,5 +1,6 @@
 # container-networks
-[Youtube](https://www.youtube.com/watch?v=6v_BDHIgOY8)
+[Youtube 1](https://www.youtube.com/watch?v=0Omvgd7Hg1I)
+[Youtube 2](https://www.youtube.com/watch?v=6v_BDHIgOY8)
 
 - Single network namespace          &emsp; &emsp; &emsp; &emsp; => Veth pair connecting namespaces to the node
 - Single node, 2 namespaces         &emsp; &emsp; &emsp; &emsp; => Veth pairs + Linux bridge
@@ -15,6 +16,61 @@ Tools:
 - socat         &emsp; &emsp; &emsp; &emsp;  &emsp; &emsp; &emsp; &emsp;  => can connect anything to anything
 - tcpdump/tshark  &emsp; &emsp; &emsp; &emsp; => capture/debug networks
 
+# General Diagram
+
+```
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+x                     NODE                         x
+x                                                  x
+x xxxxxxxxxxxxxxxxxx            xxxxxxxxxxxxxxxxxx x
+x x CONT1 netns    x            x    CONT2 netns x x
+x x                x            x                x x
+x x         vetxX2 x            x vetxY2         x x
+x xxxxxxxxxxxxxxxxxx            xxxxxxxxxxxxxxxxxx x
+x           |                          |           x
+x           |                          |           x
+x          xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx          x
+x          x vethX1              vethY1 x          x
+x          x    |                  |    x          x
+x          x    |   root netns     |    x          x
+x          x    |                  |    x          x
+x          x   xxxxxxxxxxxxxxxxxxxxxx   x          x
+x          x   x       BRIDGE       x   x          x
+x          x   xxxxxxxxxxxxxxxxxxxxxx   x          x
+x          x             |              x          x
+x          x          xxxxxxxx          x          x
+x          x          x eth0 x          x          x
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                         |
+                         |
+                         |
+                         |
+                         |
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+x          x          x eth0 x          x          x
+x          x          xxxxxxxx          x          x
+x          x             |              x          x
+x          x   xxxxxxxxxxxxxxxxxxxxxx   x          x
+x          x   x       BRIDGE       x   x          x
+x          x   xxxxxxxxxxxxxxxxxxxxxx   x          x
+x          x    |                  |    x          x
+x          x    |    root netns    |    x          x
+x          x    |                  |    x          x
+x          x vethX1             vethY1  x          x
+x          xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx          x
+x            |                       |             x
+x            |                       |             x
+x xxxxxxxxxxxxxxxxxx            xxxxxxxxxxxxxxxxxx x
+x x         vetxX2 x            x vetxY2         x x
+x x                x            x                x x
+x x CONT1 netns    x            x    CONT2 netns x x
+x xxxxxxxxxxxxxxxxxx            xxxxxxxxxxxxxxxxxx x
+x                                                  x
+x                       NODE                       x
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+```
+
+# Single netowork namespace
 ```
 ##############################
 #  xxxxxxxxxxxxxxxxxxxxxxxx  #
