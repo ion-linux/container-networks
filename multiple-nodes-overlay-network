@@ -86,5 +86,8 @@ sudo bash -c "echo 0 > /proc/sys/net/ipv4/conf/tun0/rp_filter"
 ## ping the adapter on the NODE
 # sudo ip netns exec $NS1 ping -W 1 -c 2 10.0.0.10
 
+## get route to IP
+ip route get $TO_IP1
+
 
 
